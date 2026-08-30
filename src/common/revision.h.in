@@ -1,0 +1,14 @@
+/*
+* Copyright (C) 2026 Unreal Core
+* Условия использования указаны в файле LICENSE.md в корне проекта.
+*/
+
+#ifndef __REVISION_H__
+#define __REVISION_H__
+
+#define REVISION_ID     "@REVISION_ID@"
+#define REVISION_DATE   "@REVISION_DATE@"
+#define REVISION_TIME   "@REVISION_TIME@"
+#define REVISION_BRANCH "@REVISION_BRANCH@"
+
+#endif // __REVISION_H__
