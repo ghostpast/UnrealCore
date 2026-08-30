@@ -1,5 +1,9 @@
 add_library(common STATIC
-        database.cpp
+        database/DatabaseFactory.cpp
+        database/mariadb/MariaDbConnection.cpp
+        database/mariadb/MariaDbResult.cpp
+        database/mariadb/MariaDbStatement.cpp
+        database/mariadb/MariaDbStmtResult.cpp
 )
 
 # --- MariaDB Connector/C: динамическая сборка ---
@@ -29,6 +33,7 @@ target_include_directories(common PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_SOURCE_DIR}/src/deps/asio/include
         ${CMAKE_SOURCE_DIR}/src/deps/mariadb-connector-c/include
+        ${CMAKE_BINARY_DIR}/src/deps/mariadb-connector-c/include
 )
 
 target_compile_definitions(common PUBLIC

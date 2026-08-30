@@ -15,6 +15,7 @@ endif()
 
 if(WIN32)
     add_compile_definitions(WIN32_LEAN_AND_MEAN NOMINMAX)
+    add_compile_definitions(_WIN32_WINNT=0x0601)
 endif()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
