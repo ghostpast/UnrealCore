@@ -3,6 +3,7 @@ project(UnrealCore)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
     message(FATAL_ERROR "Only x64 (64-bit) builds are supported!")
@@ -10,6 +11,10 @@ endif()
 
 if(MSVC)
     add_compile_options(/utf-8)
+endif()
+
+if(WIN32)
+    add_compile_definitions(WIN32_LEAN_AND_MEAN NOMINMAX)
 endif()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")

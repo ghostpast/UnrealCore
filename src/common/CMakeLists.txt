@@ -18,8 +18,11 @@ set(CLIENT_PLUGIN_SHA256_PASSWORD DYNAMIC CACHE STRING "" FORCE)
 set(CLIENT_PLUGIN_CACHING_SHA2_PASSWORD DYNAMIC CACHE STRING "" FORCE)
 set(CLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD OFF CACHE STRING "" FORCE)
 set(CLIENT_PLUGIN_REMOTE_IO OFF CACHE STRING "" FORCE)
+set(INSTALL_PLUGINDIR "lib/mariadb/plugin" CACHE STRING "" FORCE)
 
-add_subdirectory(mariadb-connector-c EXCLUDE_FROM_ALL)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/deps/mariadb-connector-c
+        ${CMAKE_BINARY_DIR}/src/deps/mariadb-connector-c
+        EXCLUDE_FROM_ALL)
 
 target_include_directories(common PUBLIC
         ${CMAKE_BINARY_DIR}/src/common
