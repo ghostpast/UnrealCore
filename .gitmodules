@@ -4,6 +4,3 @@
 [submodule "mariadb-connector-c"]
 	path = src/deps/mariadb-connector-c
 	url = https://github.com/mariadb-corporation/mariadb-connector-c.git
-[submodule "libpq-standalone"]
-	path = src/deps/libpq-standalone
-	url = https://gitlab.com/sabelka/libpq-standalone.git
