@@ -1,0 +1,13 @@
+# exports.txt: "имя  ordinal" -> libpq.def
+file(STRINGS ${IN} LINES)
+set(OUT_TEXT "EXPORTS\n")
+foreach(line ${LINES})
+    if(line MATCHES "^#" OR line STREQUAL "")
+        continue()
+    endif()
+    string(REGEX MATCH "^([A-Za-z0-9_]+)[ \t]+([0-9]+)" _m "${line}")
+    if(_m)
+        string(APPEND OUT_TEXT "    ${CMAKE_MATCH_1} @${CMAKE_MATCH_2}\n")
+    endif()
+endforeach()
+file(WRITE ${OUT} "${OUT_TEXT}")

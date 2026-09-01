@@ -1,0 +1,11 @@
+/*
+* Copyright (C) 2026 Unreal Core
+* Условия использования указаны в файле LICENSE.md в корне проекта.
+*/
+
+#ifndef PG_CONFIG_EXT_H
+#define PG_CONFIG_EXT_H
+
+#define PG_INT64_TYPE long long int
+
+#endif

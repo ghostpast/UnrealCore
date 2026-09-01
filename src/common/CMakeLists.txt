@@ -39,7 +39,7 @@ target_compile_definitions(common PUBLIC
         ASIO_NO_DEPRECATED
 )
 
-target_link_libraries(common PUBLIC libmariadb PostgreSQL::PostgreSQL)
+target_link_libraries(common PUBLIC libmariadb libpq)
 
 if(WIN32)
     target_link_libraries(common PUBLIC ws2_32 wsock32)

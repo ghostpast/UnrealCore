@@ -1,0 +1,13 @@
+# exports.txt -> version script
+file(STRINGS ${IN} LINES)
+set(SYMS "")
+foreach(line ${LINES})
+    if(line MATCHES "^#" OR line STREQUAL "")
+        continue()
+    endif()
+    string(REGEX MATCH "^([A-Za-z0-9_]+)" _m "${line}")
+    if(_m)
+        string(APPEND SYMS "        ${CMAKE_MATCH_1};\n")
+    endif()
+endforeach()
+file(WRITE ${OUT} "PQ_5 {\n    global:\n${SYMS}    local:\n        *;\n};\n")
