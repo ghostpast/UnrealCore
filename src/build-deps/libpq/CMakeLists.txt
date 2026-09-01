@@ -94,6 +94,7 @@ target_include_directories(pq
         $<$<BOOL:${WIN32}>:${PG_SRC}/include/port/win32>
         INTERFACE
         $<BUILD_INTERFACE:${GEN_DIR}>
+        $<BUILD_INTERFACE:${PG_SRC}/include>
         $<BUILD_INTERFACE:${PG_SRC}/interfaces/libpq>)
 
 target_compile_definitions(pq PRIVATE FRONTEND SO_MAJOR_VERSION=5)

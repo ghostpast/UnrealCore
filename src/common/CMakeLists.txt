@@ -4,6 +4,10 @@ add_library(common STATIC
         database/mariadb/MariaDbResult.cpp
         database/mariadb/MariaDbStatement.cpp
         database/mariadb/MariaDbStmtResult.cpp
+
+        database/postgresql/PostgreSqlConnection.cpp
+        database/postgresql/PostgreSqlResult.cpp
+        database/postgresql/PostgreSqlStatement.cpp
 )
 
 # --- MariaDB Connector/C: динамическая сборка ---

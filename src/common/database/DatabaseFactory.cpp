@@ -6,6 +6,7 @@
 #include "DatabaseFactory.h"
 
 #include "mariadb/MariaDbConnection.h"
+#include "postgresql/PostgreSqlConnection.h"
 
 namespace UnrealCore::Database
 {
@@ -15,6 +16,9 @@ namespace UnrealCore::Database
         {
         case DatabaseType::MariaDB:
             return std::make_unique<MariaDbConnection>();
+
+        case DatabaseType::PostgreSQL:
+            return std::make_unique<PostgreSqlConnection>();
         }
 
         return nullptr;

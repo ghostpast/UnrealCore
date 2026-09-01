@@ -12,8 +12,9 @@ namespace UnrealCore::Database
 {
     enum class DatabaseType
     {
-        MariaDB
-        // В будущем: PostgreSQL, SQLite, MSSQL и т.д.
+        MariaDB,
+        PostgreSQL
+        // В будущем: SQLite, MSSQL и т.д.
     };
 
     struct DatabaseConfig
