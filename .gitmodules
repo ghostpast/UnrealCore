@@ -8,3 +8,6 @@
 	path = src/deps/libpq
 	url = https://github.com/postgres/postgres
 	shallow = true
+[submodule "freetds"]
+	path = src/deps/freetds
+	url = https://github.com/FreeTDS/freetds.git
