@@ -16,7 +16,11 @@ set(WITH_MYSQLCOMPAT OFF CACHE BOOL "" FORCE)
 set(WITH_CURL OFF CACHE BOOL "" FORCE)
 set(WITH_ICONV OFF CACHE BOOL "" FORCE)
 set(WITH_DOCS OFF CACHE BOOL "" FORCE)
-set(WITH_SSL "SCHANNEL" CACHE STRING "" FORCE)
+if(WIN32)
+    set(WITH_SSL "SCHANNEL" CACHE STRING "" FORCE)
+else()
+    set(WITH_SSL "OPENSSL" CACHE STRING "" FORCE)
+endif()
 set(CLIENT_PLUGIN_DIALOG OFF CACHE STRING "" FORCE)
 set(CLIENT_PLUGIN_AUTH_GSSAPI_CLIENT OFF CACHE STRING "" FORCE)
 set(CLIENT_PLUGIN_CLEARTEXT OFF CACHE STRING "" FORCE)
@@ -43,7 +47,8 @@ target_compile_definitions(common PUBLIC
         ASIO_NO_DEPRECATED
 )
 
-target_link_libraries(common PUBLIC libmariadb libpq)
+target_link_libraries(common PUBLIC libmariadb libpq freetds_ct)
+add_dependencies(common freetds_ep)
 
 if(WIN32)
     target_link_libraries(common PUBLIC ws2_32 wsock32)

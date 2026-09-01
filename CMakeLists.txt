@@ -69,6 +69,7 @@ configure_file(
 # --- конец генерации ---
 
 add_subdirectory(src/build-deps/libpq)
+add_subdirectory(src/build-deps/freetds)
 add_subdirectory(src/common)
 add_subdirectory(src/authserver)
 add_subdirectory(src/worldserver)
